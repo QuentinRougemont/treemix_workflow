@@ -24,9 +24,8 @@ then
 	mkdir 10-log_files
 fi
 
-#comment option that you don"t want
-mig=$1 #number of migration event to test 
-rout=$2 #name of root 
+mig=$1 
+rout=$2
 #treemix options
 #root="-root $rout"
 i="-i 00-data/treemix.frq.gz" #name of input file
