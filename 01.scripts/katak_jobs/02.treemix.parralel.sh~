@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+mig=$1 #number of migration event to test 
+if [ -z "$mig" ]
+then
+    echo "-----------------------------------"
+    echo " running treemix without migration "
+    echo "-----------------------------------"
+    sleep 1s
+fi
+
+rout=$2 #name of root 
+if [ -z "$rout" ]
+then
+    echo "----------------------------------"
+    echo " running treemix without outgroup "
+    echo "----------------------------------"
+    sleep 1s
+fi
+
+./01-scripts/02.treemix.parralel.sh $mig $rout
