@@ -39,11 +39,11 @@ plot(seq(0,length(all.files)),z,pch="*",cex=2,col="blue", type="b",xlab="migrati
 dev.off()
 
 pdf(file="resid1.pdf")
-plot_resid("out_stem_mig",pop.uniq)
+plot_resid("out_stem_mig.",pop.uniq)
 dev.off()
 
 for(i in 1:length(all.files)){
     pdf(file=paste("treemix.residuals.m.",i,".pdf",sep=""))
-    plot_resid(paste("out_stem_mig",i,sep=""),pop.uniq)
+    plot_resid(paste("out_stem_mig.",i,  ".replicate.1",sep=""),pop.uniq)
         dev.off()
 }
