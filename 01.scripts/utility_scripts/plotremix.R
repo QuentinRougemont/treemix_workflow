@@ -4,9 +4,16 @@
 #can be run from the terminal no need to open R 
 source('../01.scripts/utility_scripts/plotting_funcs.R')
 
-#argv <- commandArgs(TRUE)
-#pop.uniq <- argv[1]
-pop.uniq <-"../00.data/pop.uniq" #a list of the uniq pop name
+argv <- commandArgs(TRUE)
+pop.uniq <- argv[1]
+#pop.uniq <-"../00.data/pop.uniq" #a list of the uniq pop name
+if(!file.exists(pop.uniq)){
+        print("error please provide a list with population name...")
+        print("list shoud contain one pop by line ")
+       stop("program stopped because of the previous errors")
+}
+
+
 
 all.files=list.files(pattern="covse.gz")
 all.files=all.files[-1]
