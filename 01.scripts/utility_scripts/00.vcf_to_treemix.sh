@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input=$1
-cluster=$2
+input=$1 #vcffile
+cluster=$2 #strata.txt
 
 if [  -z "$input" ]
 then
@@ -11,8 +11,8 @@ fi
 
 if [  -z "$cluster" ]
 then
-	echo "error please provide strat file"
-    echo "strate file 3 colomns of the form:"
+	echo "error please provide strata file"
+    echo "strata file 3 colomns of the form:"
     echo "FID\tIIDs\tCLUSTER"
 	exit
 fi 
