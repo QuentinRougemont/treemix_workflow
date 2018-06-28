@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 
-#move to 02.results before ruuning me!
+#move to 02.results before running me!
 #can be run from the terminal no need to open R 
 source('../01.scripts/utility_scripts/plotting_funcs.R')
 

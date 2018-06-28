@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Global parameters
 input=$1
 cluster=$2
 

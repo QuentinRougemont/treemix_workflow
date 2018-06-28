@@ -3,6 +3,7 @@
 TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 LOG_DIR="10-log_files"
 NUM_CPUS=4 
+
 if [[ ! -d "$LOG_DIR" ]]
 then
     echo "creating log folder" 
@@ -16,10 +17,14 @@ then
     mkdir "$boot_folder"
 fi
 
-#treemix options
-#comment option that you don"t want
-#treemix options
+# Treemix options
+# Comment options that you don't want
 mig=$1 #number of migration event to test 
+rout=$2 #name of root 
+bootrep=500
+
+
+# Report if migration is not used
 if [ -z "$mig" ]
 then
     echo "-----------------------------------"
@@ -28,7 +33,7 @@ then
     sleep 1s
 fi
 
-rout=$2 #name of root 
+# Report if outgroup is not used
 if [ -z "$rout" ]
 then
     echo "----------------------------------"
@@ -37,18 +42,17 @@ then
     sleep 1s
 fi
 
-bootrep=500
-
 echo "--------------------------------------"
 echo " $bootrep bootsratp will be performed "
 echo "--------------------------------------"
 
+# Move to folder
 cd "$boot_folder"
 mkdir treemix_boot_mig."$mig" 
 cd treemix_boot_mig."$mig"
 cp ../../00.data/treemix.frq.gz .
 
-#run bootstrap :
+# Run bootstrap :
 seq $bootrep |parallel -j "$NUM_CPUS" ../../01.scripts/treemix_iterations.sh {} "$mig"
 
 #run ML tree:
