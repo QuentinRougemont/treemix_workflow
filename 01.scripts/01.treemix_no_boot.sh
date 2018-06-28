@@ -15,10 +15,19 @@ then
     mkdir 02.results
 fi
 
-#treemix options
-#comment option that you don"t want
-#treemix options
+# Treemix options
+# Comment options that you don't want
 mig=$1 #number of migration event to test 
+rout=$2 #name of root
+#root="-root $rout"
+i="-i 00.data/treemix.frq.gz" #name of input file
+m="-m" #migration
+o="-o out_stem_mig"
+#b="-bootstrap"
+k="-k 100"
+se="-se"
+
+# Report if migration is not used
 if [ -z "$mig" ]
 then
     echo "-----------------------------------"
@@ -27,7 +36,7 @@ then
     sleep 1s
 fi
 
-rout=$2 #name of root 
+# Report if outgroup is not used
 if [ -z "$rout" ]
 then
     echo "----------------------------------"
@@ -36,11 +45,5 @@ then
     sleep 1s
 fi
 
-#root="-root $rout"
-i="-i 00.data/treemix.frq.gz" #name of input file
-m="-m" #migration
-o="-o out_stem_mig"
-#b="-bootstrap"
-k="-k 100"
-se="-se"
+# Run treemix
 treemix $i $rout $m "$mig" $se $b $k -o 02.results/out_stem_mig"$mig" | tee 10-log_files/"$TIMESTAMP"_treemix.log  

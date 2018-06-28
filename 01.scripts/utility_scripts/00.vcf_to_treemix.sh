@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Global parameters
 input=$1 #vcffile
 cluster=$2 #strata.txt
 
