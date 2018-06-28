@@ -9,6 +9,10 @@ also contains treemix utility to perform plots with defaults treemix function
 WARNING:
 read carefully treemix manual and edit script depending on the options you want to use
 
+If you don't have your input in treeemix format, then you can use `01.scripts/utility_scripts/00.vcf_to_treemix.sh`
+which is a simplified script to convert a vcf file into treemix input file
+
+
 ## To do:
 
 fill this README
