@@ -4,11 +4,8 @@
 TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 LOG_DIR="10-log_files"
 
-if [[ ! -d "$LOG_DIR" ]]
-then
-    echo "creating log folder" 
-    mkdir 10-log_files
-fi
+echo "creating log folder" 
+mkdir 10-log_files 2>/dev/null
 
 id=$1
 mig=$2
