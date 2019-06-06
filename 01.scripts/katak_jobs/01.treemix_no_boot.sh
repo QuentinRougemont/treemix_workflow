@@ -2,9 +2,7 @@
 #SBATCH -J "se_treemix"
 #SBATCH -o log_%j
 #SBATCH -c 1
-#SBATCH -A ibismax
-#SBATCH -p ibismax
-##SBATCH -p low-cancel
+#SBATCH -p large
 ##SBATCH --mail-type=FAIL
 ##SBATCH --mail-user=asdf
 #SBATCH --time=10-00:00
