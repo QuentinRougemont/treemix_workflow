@@ -23,7 +23,7 @@ then
 	fi
 else 
     echo "preparing tree with migration"
-    for j in $(ls $boot_folder/*treeout.gz |sed "s/$boot_folder\///g" ) ; 
+    for j in $(ls $boot_folder/*treeout.gz |sed "s:$boot_folder\/::g" ) ; 
 	do 
        	zcat $boot_folder/*.treeout.gz |sed -n '1p' >> sumtrees."$mig".tree
     	zcat $boot_folder/*.treeout.gz |sed  '1d' |cut -d " " -f 5- |for j in $(seq $mig) ;do sed -n '1p'  >> sumtrees."$mig".migration_edge."$j".tree ; done 
