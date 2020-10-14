@@ -22,7 +22,7 @@ plink --vcf "$input" --allow-extra-chr --recode
 
 awk '{print $1, $1"_"$2 }' plink.ped > pop_ind.tmp
 cut -d " " -f 3- plink.ped > geno.tmp
-cp plink.ped > plink.ped.back
+cp plink.ped plink.ped.back
 paste pop_ind.tmp geno.tmp  > plink.ped
 rm *.tmp
 
@@ -33,3 +33,5 @@ plink --file plink \
 
 gzip plink.frq.strat
 ./01.scripts/utility_scripts/plink2treemix.py plink.frq.strat.gz treemix.frq.gz
+
+echo "input file is ready for treemix"
