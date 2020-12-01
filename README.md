@@ -11,6 +11,11 @@ depending on the options you want to use
 If you don't have your input in treeemix format, then you can use `01.scripts/utility_scripts/00.vcf_to_treemix.sh`
 which is a simplified script to convert a vcf file into treemix input file
 
+## Dependencies:  
+
+- Treemix
+- [plink](https://www.cog-genomics.org/plink/2.0/)
+
 
 ## To do:
 
