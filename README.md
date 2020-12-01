@@ -21,6 +21,17 @@ which is a simplified script to convert a vcf file into treemix input file
 - Treemix
 - [plink](https://www.cog-genomics.org/plink/2.0/)
 
+ 
+## plink installation
+
+```bash
+
+wget http://s3.amazonaws.com/plink2-assets/plink2_linux_x86_64_20201028.zip 
+unzip plink2_linux_x86_64_20201028.zip         
+
+#then add path to bashrc or cp to bin
+
+```
 
 ## To do:
 
