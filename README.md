@@ -11,6 +11,11 @@ depending on the options you want to use
 If you don't have your input in treeemix format, then you can use `01.scripts/utility_scripts/00.vcf_to_treemix.sh`
 which is a simplified script to convert a vcf file into treemix input file
 
+## Environment:
+
+- Linux should work on any recent cluster
+- tested frequently on Ubuntu 18.04 bionic 
+
 ## Dependencies:  
 
 - Treemix
